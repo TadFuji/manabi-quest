@@ -4,10 +4,11 @@
 絵(ドット絵)・音(チップチューン)・問題(205問)・プログラムのすべてを、
 画像ファイル・音声ファイルを一切使わず、ひとつのAI(Claude)がコードだけで作りました。
 
-## 遊び方(いちばん簡単)
+## あそぶ
 
-`dist\manabi-quest.html` をダブルクリックするだけで、ブラウザで遊べます。
-(1ファイルにすべて入った完成品です)
+ここをひらくだけで遊べます(パソコンでもスマホでもOK):
+
+**https://tadfuji.github.io/manabi-quest/**
 
 ## 操作
 
@@ -22,8 +23,7 @@
 npm install        # 部品をそろえる(初回のみ)
 npm run dev        # 開発用サーバーで遊ぶ
 npm run build      # 完成品を dist/ に作る(型チェック込み)
-node scripts/make-single-file.mjs   # dist/manabi-quest.html(1ファイル版)を作る
-node scripts/validate-data.mjs      # 絵・音・問題データの機械検証
 ```
 
-仕様書は `PLAN.md` を参照してください。
+main ブランチに送ると、GitHub Actions が自動でビルドして
+GitHub Pages に公開します(`.github/workflows/deploy.yml`)。
