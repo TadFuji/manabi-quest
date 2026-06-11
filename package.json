@@ -2,12 +2,22 @@
   "name": "manabi-quest",
   "private": true,
   "version": "1.0.0",
+  "description": "8-bit educational RPG for Japanese 3rd graders - all pixel art, chiptune music and 205 quiz questions generated as code by a single AI",
+  "author": "Tadahiro Fujikawa",
+  "license": "MIT",
+  "homepage": "https://tadfuji.github.io/manabi-quest/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TadFuji/manabi-quest.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate": "esbuild src/data/*.ts --format=esm --outdir=scripts/.build && node scripts/validate-data.mjs",
+    "single": "node scripts/make-single-file.mjs"
   },
   "devDependencies": {
     "typescript": "^5.6.0",

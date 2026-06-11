@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: CI/CD
 
 on:
   push:
@@ -24,6 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Validate game data (questions, sprites, music)
+        run: npm run validate
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
