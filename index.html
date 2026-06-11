@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>ことばと かずの ぼうけん 〜マナビクエスト〜</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+  body { touch-action: none; }
+  #wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #game {
+    image-rendering: pixelated;
+    width: min(100vw, calc(100vh * 8 / 7));
+    height: min(100vh, calc(100vw * 7 / 8));
+  }
+  #touch { position: fixed; inset: 0; pointer-events: none; display: none; z-index: 10; }
+  body.touch #touch { display: block; }
+  .tbtn {
+    position: absolute; pointer-events: auto; touch-action: none;
+    background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.35);
+    border-radius: 10px; color: rgba(255,255,255,.7);
+    display: flex; align-items: center; justify-content: center;
+    font: bold 18px sans-serif; user-select: none; -webkit-user-select: none;
+  }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="game" width="512" height="448"></canvas></div>
+<div id="touch">
+  <div class="tbtn" data-btn="up"    style="left:66px;  bottom:122px; width:52px; height:52px;">&#9650;</div>
+  <div class="tbtn" data-btn="left"  style="left:8px;   bottom:64px;  width:52px; height:52px;">&#9664;</div>
+  <div class="tbtn" data-btn="right" style="left:124px; bottom:64px;  width:52px; height:52px;">&#9654;</div>
+  <div class="tbtn" data-btn="down"  style="left:66px;  bottom:6px;   width:52px; height:52px;">&#9660;</div>
+  <div class="tbtn" data-btn="b"     style="right:88px; bottom:36px;  width:60px; height:60px; border-radius:50%;">B</div>
+  <div class="tbtn" data-btn="a"     style="right:14px; bottom:80px;  width:60px; height:60px; border-radius:50%;">A</div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
