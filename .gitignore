@@ -1,3 +1,6 @@
 node_modules/
 dist/
 scripts/.build/
+
+# Claude Code personal permission rules (may contain secrets)
+.claude/settings.local.json
